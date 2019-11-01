@@ -23,7 +23,11 @@ const cardsContainer = document.querySelector('.cards-container');
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
         console.log(response)
-
+        for(let i in response.data.articles) { 
+            response.data.articles[i].forEach(item =>{ 
+             cardsContainer.appendChild(createCard(item)); 
+            }) 
+         }
     })
     .catch(error => {
         console.log('Data not returned!', error)

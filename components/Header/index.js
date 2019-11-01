@@ -10,6 +10,7 @@
 // And add it to the DOM in the .header-container component
 
 const container = document.querySelector('.header-container');
+container.appendChild(Header());
 
 function Header() {
     const header = document.createElement('div');
@@ -21,12 +22,13 @@ function Header() {
     date.classList.add('date');
     temp.classList.add('temp');
 
-    date.textContent = 'MARCH 28, 2019';
+    date.textContent = 'November 1, 2019';
     title.textContent = 'Lambda Times';
-    temp.textContent = '98°';
+    temp.textContent = '50°';
 
-    header.appendChild(date, title, temp);
-    container.appendChild(header);
+    header.appendChild(date);
+    header.appendChild(title);
+    header.appendChild(temp);
 
    return header;      
 }
